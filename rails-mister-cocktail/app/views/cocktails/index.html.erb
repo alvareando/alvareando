@@ -1,0 +1,24 @@
+<h1>Welcome to your personal Cocktails menu!</h1>
+
+<h2>These are all the Cocktails you've stored do far</h2>
+
+<table>
+
+  <thead>
+    <th>Name</th>
+    <th>Ingredients</th>
+  </thead>
+  <tbody>
+  <% @cocktails.each do |cocktail| %>
+    <tr>
+      <td><%= cocktail.name%></td>
+      <% cocktail.doses.each do |dose| %>
+      <td><%=dose.description%></td>
+      <td><%=dose.ingredient.name%></td>
+      <%end%>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
+
+
